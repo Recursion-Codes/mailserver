@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const express = require('express');
 const server = express();
+const path = require("path") 
 server.use(express.static(path.join(__dirname, 'build')))
 
 const db = mysql.createConnection({
@@ -23,6 +24,7 @@ db.query("SELECT * FROM emailmessages", (err, result)=>{
 });
 
 server.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
   res.send("does this work ? ? ?");
 })
 
