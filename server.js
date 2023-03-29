@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 
 server.use(express.json());
 
-db.query("SELECT * FROM tablename", (err, result)=>{
+db.query("SELECT * FROM emailmessages", (err, result)=>{
   if(err)
   {
       console.log(err);
