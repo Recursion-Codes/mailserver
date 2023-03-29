@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const express = require('express');
 const server = express();
+server.use(express.static(path.join(__dirname, 'build')))
 
 const db = mysql.createConnection({
     user: `Wheel`,
