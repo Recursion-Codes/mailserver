@@ -32,7 +32,7 @@ server.listen(5001, () => {
   console.log("does this work");
 }) 
 
-server.get("/getEmails whateverURL", (req, res) => {
+server.get("/getEmails", (req, res) => {
   db.query("SELECT * FROM emailmessages", (err, result)=>{
       if(err)
       {
