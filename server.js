@@ -4,7 +4,6 @@ const server = express();
 
 const db = mysql.createConnection({
     user: `Wheel`,
-    port: 3306,
     host: `DESKTOP-A8135BP`,
     password: `Gengu!123`,
 });
