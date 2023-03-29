@@ -11,6 +11,16 @@ const db = mysql.createConnection({
 
 server.use(express.json());
 
+db.query("SELECT * FROM tablename", (err, result)=>{
+  if(err)
+  {
+      console.log(err);
+  } 
+  else {
+      console.log(result);
+  }
+});
+
 server.get("/", (req, res) => {
   res.send("does this work ? ? ?");
 })
