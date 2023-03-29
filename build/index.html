@@ -9,7 +9,7 @@
     <script>
     document.getElementById("emailbutton").addEventListener("click", myFunction);
         function myFunction(){
-            axios.get("localhost:5001/whateverURL").then((res) => { 
+            axios.get("localhost:5001").then((res) => { 
     console.log(res);
     console.log(res.data);
 }
