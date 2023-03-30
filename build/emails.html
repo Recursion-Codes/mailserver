@@ -1,0 +1,34 @@
+<title>Night City After Dark</title>
+    <link rel="icon" href="images/CityIcon.png" type="image/icon type">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link href="emailstyling.css" rel="stylesheet">
+<style>
+body{
+background-color:black;
+margin:0;
+font-family:datafont;
+overflow:hidden;
+}
+</style>
+<body>
+<div class="scanlines"></div>
+
+<div class="emailbanner">
+<div class="email" onclick="showemail(0)"><font style="font-size:3vh">UserEmail</font>
+<br><br><font style="font-size:2vh">EmailSubject...</font></div>
+<div class="emailcontent" id="email0"><font style="font-size:4vh">UserEmail</font><br><br><br><font style="font-size:2.5vh">EmailSubject<br><br><br></font>
+<font style="font-size:2vh">EmailContent
+
+    <input type="button" id="emailbutton" value="get emails">
+</div>
+</div>
+    <script>
+    document.getElementById("emailbutton").addEventListener("click", myFunction);
+        function myFunction(){
+            axios.get("http://localhost:5001/getEmails%22").then((res) => { 
+    console.log(res);
+    console.log(res.data);
+}
+        )}
+    </script>
