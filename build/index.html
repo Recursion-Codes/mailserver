@@ -33,13 +33,12 @@
             data = res.data
             //console.log(res);
             //console.log(res.data);
-        })
-        for(i = 0; i <= data.length - 1; i++) {
-            string = string + `<li> 
-                <p> Sender: ${data[i].useremail} </p>
-            </li> `
-        }
+            //        for(i = 0; i <= data.length - 1; i++) {
+            //string = string + `
+                string = `<p> Sender: ${data[0].useremail} </p>
+            `
+        //}
         list.innerHTML= string;
-        console.log(string)
+        })
     }
 </script>
