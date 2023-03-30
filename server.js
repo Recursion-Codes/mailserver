@@ -9,7 +9,7 @@ server.use(express.static(path.join(__dirname, 'build')))
 const db = mysql.createConnection({
     user: `Wheel`,
     database: 'emails',
-    host: `DESKTOP-A8135BP`,
+    host: `Server`,
     password: `Gengu!123`,
 });
 
