@@ -2,6 +2,8 @@ const mysql = require('mysql');
 const express = require('express');
 const server = express();
 const path = require("path") 
+const cors = require('cors');
+server.use(cors());
 server.use(express.static(path.join(__dirname, 'build')))
 
 const db = mysql.createConnection({
