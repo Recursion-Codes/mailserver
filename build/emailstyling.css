@@ -50,15 +50,6 @@ height:100%;
 
 }
 
-#page1{
-width:100%;
-height:100%;
-position:absolute;
-top:0vh;
-left:0vh;
-background-color:black;
-}
-
 .emailbanner{
 width:40vh;
 height:100%;
@@ -66,7 +57,7 @@ position:absolute;
 left:0vh;
 border-right:solid .5vh rgb(179,255,179);
 }
-.email{
+.emailnotification{
 width:38vh;
 height:18vh;
 position:relative;
@@ -80,10 +71,10 @@ padding-top:2vh;
 transition:.25s;
 cursor:pointer;
 }
-.email:hover{
+.emailnotification:hover{
 background-color: rgba(179,255,179,0.2);
 }
-.emailcontent{
+.emailcontainer{
 width:83vh;
 height:48vh;
 left:45vh;
@@ -94,4 +85,7 @@ font-family:datafont;
 color:rgb(179,255,179);
 text-shadow: 0vh 0vh 2vh rgb(173,255,158);
 padding:2vh;
+}
+.emailtitle{
+font-size:3vh;
 }

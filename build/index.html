@@ -1,34 +1,45 @@
 <title>Night City After Dark</title>
-    <link rel="icon" href="img/CityIcon.png" type="image/icon type">
+<link rel="icon" href="img/CityIcon.png" type="image/icon type">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link href="emailstyling.css" rel="stylesheet">
 <style>
-body{
-background-color:black;
-margin:0;
-font-family:datafont;
-overflow:hidden;
-}
+    body{
+        background-color:black;
+        margin:0;
+        font-family:datafont;
+        overflow:hidden;
+    }
 </style>
-<body>
-<div class="scanlines"></div>
-
-<div class="emailbanner">
-<div class="email" onclick="showemail(0)"><font style="font-size:3vh">UserEmail</font>
-<br><br><font style="font-size:2vh">EmailSubject...</font></div>
-<div class="emailcontent" id="email0"><font style="font-size:4vh">UserEmail</font><br><br><br><font style="font-size:2.5vh">EmailSubject<br><br><br></font>
-<font style="font-size:2vh">EmailContent
-
-    <input type="button" id="emailbutton" value="get emails">
+<body onload="myFunction()">
+    <div class="scanlines"></div>
+    
+    <div class="emailbanner">
+        <div class="emailnotification"><div class="emailtitle"><h3>UserEmail</h3></div>
+        <p>EmailSubject...</p></div>
+    </div>
+    <div class="emailcontainer" id="emaillist" style="color:white;">
+        
+        <!-- <input type="button" id="emailbutton" value="get emails"> -->
+    </div>
+    
 </div>
-</div>
-    <script>
-    document.getElementById("emailbutton").addEventListener("click", myFunction);
-        function myFunction(){
-            axios.get("http://localhost:5001/getEmails").then((res) => { 
-    console.log(res);
-    console.log(res.data);
-}
-        )}
-    </script>
+<script>
+    list = document.getElementById("emaillist");
+    string = "";
+    var data = {}
+    function myFunction(){
+        axios.get("http://localhost:5001/getEmails").then((res) => { 
+            data = res.data
+            //console.log(res);
+            //console.log(res.data);
+        })
+        for(i = 0; i <= data.length - 1; i++) {
+            string = string + `<li> 
+                <p> Sender: ${data[i].useremail} </p>
+            </li> `
+        }
+        list.innerHTML= string;
+        console.log(string)
+    }
+</script>
