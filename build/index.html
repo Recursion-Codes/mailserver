@@ -18,27 +18,31 @@
         <div class="emailnotification"><div class="emailtitle"><h3>UserEmail</h3></div>
         <p>EmailSubject...</p></div>
     </div>
-    <div class="emailcontainer" id="emaillist" style="color:white;">
-        
+    <div class="emailcontainer text">
+        <div class="text"  id="mainemailsender">Abc</div>
+        <div class="text" id="mainemailsubject">Xyz</div>
+        <div class="text" id="mainemailcontent">Efg</div>
         <!-- <input type="button" id="emailbutton" value="get emails"> -->
     </div>
     
 </div>
 <script>
-    list = document.getElementById("emaillist");
+    mainemailsender = document.getElementById("mainemailsender");
+    mainemailsubject = document.getElementById("mainemailsubject");
+    mainemailcontent = document.getElementById("mainemailcontent");
     string = "";
     var data = {}
     function myFunction(){
         axios.get("http://98.148.80.97:5001/getEmails").then((res) => { 
             data = res.data
-            //console.log(res);
-            //console.log(res.data);
-            //        for(i = 0; i <= data.length - 1; i++) {
-            //string = string + `
-                string = `<p> Sender: ${data[0].useremail} </p>
-            `
+                mainemailsenderdata = `<p> Sender: ${data[0].useremail} </p>`
+                mainemailsubjectdata = `<p> Subject: ${data[0].subject} </p>`
+                mainemailcontentdata = `<p>${data[0].content} </p>`
+                console.log(data[0].content);
         //}
-        list.innerHTML= string;
+        mainemailsender.innerHTML= mainemailsenderdata;
+        mainemailsubject.innerHTML= mainemailsubjectdata;
+        mainemailcontent.innerHTML= mainemailcontentdata;
         })
     }
 </script>
