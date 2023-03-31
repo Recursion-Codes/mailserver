@@ -34,7 +34,7 @@ server.listen(5001, () => {
 }) 
 
 server.get("/getEmails", (req, res) => {
-  db.query("SELECT * FROM emailmessages", (err, result)=>{
+  db.query("SELECT * FROM emailmessages WHERE recipient = req.body.username", (err, result)=>{
       if(err)
       {
           console.log(err);
@@ -42,6 +42,7 @@ server.get("/getEmails", (req, res) => {
       else {
           res.send(result);
       }
+
   });
 })
 
@@ -62,5 +63,5 @@ server.post("/login",(req,res)=>{
           {
               res.send({success: false});
           }
-  })
+        })
 }})
