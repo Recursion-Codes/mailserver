@@ -7,10 +7,9 @@ server.use(cors());
 server.use(express.static(path.join(__dirname, 'build')))
 
 const db = mysql.createConnection({
-    user: `Wheel`,
+    user: `NightCitizen`,
     database: 'emails',
     host: `Server`,
-    password: `Gengu!123`,
 });
 
 server.use(express.json());
