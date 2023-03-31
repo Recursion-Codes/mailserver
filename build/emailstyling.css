@@ -1,5 +1,6 @@
 
-@font-face { font-family: datafont; src: url(dos.ttf) }
+@font-face { font-family: datafont; src: url(fonts/Modenine.ttf) }
+@font-face { font-family: datafont2; src: url(fonts/Linebeam.ttf) }
 
 .scanlines {
 pointer-events: none; 
@@ -46,26 +47,26 @@ height:100%;
 
 #body{
 	color:rgb(179,255,179);
-	text-shadow: 0vh 0vh 2vh rgb(173,255,158);
+	text-shadow: 0vh 0vh 2vh #6bff77;
 
 }
 
 .emailbanner{
-width:40vh;
+width:30vh;
 height:100%;
 position:absolute;
-left:0vh;
-border-right:solid .5vh rgb(179,255,179);
+left:5vh;
+border-right:solid .5vh #6bff77;
 }
 .emailnotification{
-width:38vh;
+width:28vh;
 height:18vh;
 position:relative;
 top:0vh;
 left:0vh;
 color:rgb(179,255,179);
-text-shadow: 0vh 0vh 2vh rgb(173,255,158);
-border-bottom:solid .5vh rgb(179,255,179);
+text-shadow: 0vh 0vh 2vh #6bff77;
+border-bottom:solid .5vh #6bff77;
 padding-left:2vh;
 padding-top:2vh;
 transition:.25s;
@@ -79,11 +80,11 @@ width:83vh;
 height:48vh;
 left:45vh;
 top:30vh;
-border:solid .5vh rgb(179,255,179);
+border:solid .5vh #6bff77;
 position:absolute;
 font-family:datafont;
 color:rgb(179,255,179);
-text-shadow: 0vh 0vh 2vh rgb(173,255,158);
+text-shadow: 0vh 0vh 2vh #6bff77;
 padding:2vh;
 }
 .emailtitle{
@@ -92,4 +93,157 @@ font-size:3vh;
 
 .text{
 	color:white;
+}
+
+#terminal{
+    background-image:url(images/terminal.png);
+    width:160vh;
+    height:100vh;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    position:absolute;
+    bottom:50%;
+    right:50%;
+    margin-bottom:-50vh;
+    margin-right:-80vh;
+    z-index:12;
+    pointer-events:none;
+}
+
+.scanlines {
+    width:159.9vh;
+    height:100vh;
+    bottom:50%;
+    right:50%;
+    margin-bottom:-50vh;
+    margin-right:-79.9vh;
+    position: absolute;
+    overflow: hidden;
+    z-index:11;
+    pointer-events:none;
+}
+.scanlines:before, .scanlines:after {
+    display: block;
+    pointer-events: none;
+    content: '';
+    position: absolute;
+}
+.scanlines:before {
+    height: 2px;
+    width: 100%;
+    z-index: 2147483649;
+    background: rgba(59, 255, 102, 0.4);
+    opacity: 0.55;
+    animation: scanline 6s linear infinite;
+}
+.scanlines:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483648;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .31) 51%);
+    background-size: 100% .55vh;
+    animation: scanlines .5s steps(60) infinite;
+}
+@keyframes scanline {
+    0% {
+        transform: translate3d(0, 200000%, 0);
+    }
+}
+@keyframes scanlines {
+    0% {
+        background-position: 0 50%;
+    }
+}
+
+#innershadow{
+    box-shadow: inset 0 0 15vh #4db856;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    position:absolute;
+    width:159.9vh;
+    height:100vh;
+    bottom:50%;
+    right:50%;
+    margin-bottom:-50vh;
+    margin-right:-79.9vh;
+    background-color:#000000;
+    pointer-events:none;
+    transition-duration: 1s;
+}
+
+
+#logo{
+    right:50%;
+    top:50%;
+    margin-right:-12vh;
+    margin-top:-37vh;
+    width:59.9vh;
+    font-family:datafont2;
+    position:absolute;
+    color:#6bff77;
+    font-size:8vh;
+    text-align:center;
+    pointer-events:none;
+	z-index:1;
+}
+#logo2{
+    background-image:url('images/city.png');
+    background-size:contain;
+    object-fit:cover;
+    background-position:right;
+    background-repeat:no-repeat;
+    top:50%;
+    right:50%;
+    width:54vh;
+    height:22vh;
+    margin-top:-44vh;
+    margin-right:-63vh;
+    font-family:TermFont;
+    position:absolute;
+    color:#6bff77;
+    font-size:8vh;
+    text-align:center;
+    z-index:2;
+}
+#topmission{
+width:76vh;
+height:6vh;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-64vh;
+margin-top:-39vh;
+z-index:1;
+filter:blur(.2vh);
+color:#6bff77;
+font-family:termfont;
+font-size:3.25vh;
+}
+#bottommission{
+width:76vh;
+height:6vh;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-21vh;
+margin-top:-26vh;
+z-index:1;
+filter:blur(.2vh);
+color:#6bff77;
+font-family:termfont;
+font-size:3.25vh;
+}
+#container{
+    width:160vh;
+    height:100vh;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    position:absolute;
+    bottom:50%;
+    right:50%;
+    margin-bottom:-50vh;
+    margin-right:-80vh;
+    z-index:12;
 }
