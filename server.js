@@ -58,6 +58,7 @@ server.post("/login",(req,res)=>{
           if(result.length > 0)
           {
               res.send({success: true});
+          var loggedInUser = req.body.username;
           }
           else
           {
