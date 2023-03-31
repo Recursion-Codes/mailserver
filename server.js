@@ -9,7 +9,7 @@ var loggedInUser = ""
 const db = mysql.createConnection({
     user: `NightCitizen`,
     database: 'emails',
-    host: `emaildb.cinny7bgkwub.us-east-1.rds.amazonaws.com`,
+    host: `ec2-3-83-142-157.compute-1.amazonaws.com`,
 });
 
 server.use(express.json());
