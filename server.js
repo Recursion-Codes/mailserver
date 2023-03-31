@@ -45,3 +45,7 @@ server.get("/getEmails", (req, res) => {
       }
   });
 })
+
+server.post("url",(req,res)=>{
+console.log(req.body);
+})
