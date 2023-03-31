@@ -34,7 +34,7 @@ server.listen(5001, () => {
 }) 
 
 server.get("/getEmails", (req, res) => {
-  db.query("SELECT * FROM emailmessages WHERE recipient = 'xyz'", (err, result)=>{
+  db.query("SELECT * FROM emailmessages WHERE recipient = loggedInUser", (err, result)=>{
       if(err)
       {
           console.log(err);
