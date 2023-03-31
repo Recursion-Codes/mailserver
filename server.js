@@ -5,7 +5,7 @@ const path = require("path")
 const cors = require('cors');
 server.use(cors());
 server.use(express.static(path.join(__dirname, 'build')))
-
+var loggedInUser = ""
 const db = mysql.createConnection({
     user: `NightCitizen`,
     database: 'emails',
@@ -35,7 +35,7 @@ server.listen(5001, () => {
 
 server.get("/getEmails", (req, res) => {
 
-  db.query("SELECT * FROM emailmessages WHERE recipient = "+loggedInUser, (err, result)=>{
+  db.query("SELECT * FROM emailmessages WHERE recipient = "+ loggedInUser, (err, result)=>{
       if(err)
       {
           console.log(err);
@@ -59,7 +59,7 @@ server.post("/login",(req,res)=>{
           if(result.length > 0)
           {
               res.send({success: true});
-              var loggedInUser = req.body.username;
+              loggedInUser = req.body.username;
           }
           else
           {
