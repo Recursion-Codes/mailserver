@@ -47,5 +47,21 @@ server.get("/getEmails", (req, res) => {
 })
 
 server.post("/login",(req,res)=>{
-console.log(req.body);
+  if(req.body.username != null && req.body.password != null)
+  {
+      db.query("SELECT * FROM users WHERE username = ? AND password = ?", [req.body.username, req.body.password], (err, result) => {
+          if(err)
+          {
+              console.log(err);
+          } 
+
+          if(result.length > 0)
+          {
+              res.send({success: true});
+          }
+          else
+          {
+              res.send({success: false});
+          }
+  }
 })
