@@ -48,7 +48,7 @@ server.post("/login",(req,res)=>{
           {
               res.send({success: true});
               server.get("/getEmails", (req, res) => {
-                db.query("SELECT * FROM emailmessages WHERE recipient = req.body.username", (err, result)=>{
+                db.query(`SELECT * FROM emailmessages WHERE recipient = `+ req.body.username, (err, result)=>{
                     if(err)
                     {
                         console.log(err);
