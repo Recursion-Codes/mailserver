@@ -9,7 +9,8 @@ var loggedInUser = ""
 const db = mysql.createConnection({
     user: `NightCitizen`,
     database: 'emails',
-    host: `98.148.80.98:5001`,
+    host: `localhost`,
+    port: 5001,
 });
 
 server.use(express.json());
