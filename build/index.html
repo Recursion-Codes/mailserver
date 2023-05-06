@@ -1,159 +1,125 @@
-<title>Night City After Dark</title>
-<link rel="icon" href="img/CityIcon.png" type="image/icon type">
+<head>
+    <title>Night City Digital</title>
+    <link rel="icon" href="images/CityIcon.png" type="image/icon type">
 </head>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link href="emailstyling.css" rel="stylesheet">
+<link href="NCStyling.css" rel="stylesheet" />
 <style>
     body{
-        background-color:black;
-        margin:0;
-        font-family:datafont;
         overflow:hidden;
+        background-color:black;
+        cursor: url('images/cursor.png'), auto;
     }
+    
 </style>
 <body>
+    <audio id="keysound" src="audio/keysound1.wav"></audio>
+    <audio id="keysound2" src="audio/keysound2.wav"></audio>
+    <div id="darkness" onclick="startterm()"></div>
     <div id="terminal"></div>
-    <div id="innershadow"></div>
+    <div id="topmission">
+    the city is dark
+    </div>
+    <div id="bottommission">
+    we light the way
+    </div>
     <div class="scanlines"></div>
-
-<!--Email page-->
-
-    <div class="container" id="emailpage">
-        <div id="logo">Night City After Dark</div>
-        <div id="logo2"></div>
-
-
-<!-- Email Banner -->
-
-    <div class="emailbanner" id="emailbannerid">
-        <!--Email Widgets-->
+    <div id="innershadow"></div>
+    <div id="logo">Night City Digital</div>
+    <a href="#home"><div id="logo2"></div></a>
+    <div id="navbar">
+        <a href="#navigation"><div class="navelement">Navigation
+        </div></a>
+        <a href="#shopping"><div class="navelement">Shopping
+        </div></a>
+        <a href="#classifieds"><div class="navelement">Classifieds
+        </div></a>
+        <a href="#news"><div class="navelement">News
+        </div></a>
+        <a href="#alerts"><div class="navelement">Alerts
+        </div></a>
     </div>
-
-
-
-<!-- Email Container -->
-
-    <div class="emailcontainer text">
-        <div class="text"  id="mainemailsender"></div>
-        <div class="text" id="mainemailsubject"></div>
-        <div class="text" id="mainemailcontent"></div>
+    <div id="contentcontainer">
+        <div class="sectionimage"><img src="images/cityimage.jpg"></div>
+        <div id="home" class="contentbox">
+            <h1>Welcome to Night City Digital
+            </h1>
+            <p>Thank you for connecting to Night City's premier Cyberstage.
+                <br><br>Night City Digital is proud to provide Night Citizens with <b>the</b> premier cybersource for every need from iron to chrome.
+                <br><br>Updates to Night City Digital services for navigation, shopping, classified advertisements and alerts update once per week on Saturday, 3:30 PST.
+                <br><br>Beware fakes. NCD has your back.
+                <br><br>NCD thanks Talsorian Inc. for their help in bringing Night City to the net.
+                <br><br>For more support please email admin@nightcity.digital.</p>
+        </div>
+        <div class="sectionimage" style="margin-top:26vh"><img src="images/Navigationimage.jpg"></div><div id="navigation" class="contentbox">
+            <h1>Navigation
+            </h1>
+            <p>Need to get around? Night City Digital can connect you with Red Cab or Combat Cab at your convenience. Prices may vary.
+            <br><br><blinking> <a target="_blank" href="images/nightcitymap.png">>>New<< Night City Map</a></blinking></p>
+            <h1>Vehicle Rentals</h1><p>
+            Honda Metrocar: 40<font style="font-family:arial">€</font>$ / 24hr as seen in Core Magazine pg.185<br>
+            <br>Brennan Hermes: 10<font style="font-family:arial">€</font>$ / 24hr as seen in Chromebook 3 pg.50<br>
+            <br>NWA Roadcar: 65<font style="font-family:arial">€</font>$ / 24hr as seen in Chromebook 3 pg.42<br>
+            <br>GMI Sierra Hatch: 140<font style="font-family:arial">€</font>$ / 24hr as seen in Chromebook 3 pg.34<br>
+            <br>Toyota Avante: 240<font style="font-family:arial">€</font>$ / 24hr as seen in Core Magazine pg.185<br>
+            </p>
+        </div><div class="sectionimage" style="margin-top:77vh"><img src="images/entertainmentimage.jpg"></div><div id="shopping" class="contentbox">
+            <h1>Shopping
+            </h1>
+            <p>Night City Digital has everything you could ever want, delivered discreetly to you door. Same and one day shipping available.
+            <br><br>Mid-April is here. Good luck to all the students at Night City University. 10% off Boost for the hardworking student. As seen in Core pg.123
+            <br><br>Water balloons and waterguns for 5ED/50 and 20ED. Ask for details.
+            <br><br>Spring means sports. Forearm Guards, E-Z Glide Kneepads, Ballistitech Exo-Plasts all 20% off for the athlete in you as seen in Blackhand's Body Armor.
+            </p>
+        </div><div class="sectionimage" style="margin-top:128.1vh"><img src="images/classifiedsimage.jpg"></div><div id="classifieds" class="contentbox">
+            <h1>Classifieds
+            </h1>
+            <p>The only E-Scream you'll ever need.</p>
+            <h1>Metal Bastards are NOT BACK</h1><p>
+                Please disregard last week's message. The Metal Bastards are not back and there was a miscommunication with the fixer.<br>
+                For those with jobs still needing to be filled, please contact Johnny Speed and a team will reach you.
+            </p>
+            <h1>PMO Gunsmith LFW</h1><p>
+                Gunsmith specializing in polymer one-shots. Get your cannons for cheap. Returning customers get discounts. Call 
+                me for more information. Don't hesitate. Protect yourself for cheap. Support local business.
+            </p>
+            <h1>Birthday Clown Needed</h1><p>
+                Need a clown for my son's birthday next week. Will hire for 25 ED/Hour but will pay more depending on experience.
+                No mimes, clowns specifically. Circus-style preferred but will take any.
+            </p>
+        </div><div class="sectionimage" style="margin-top:179vh"><img src="images/newsimage.jpg"></div><div id="news" class="contentbox">
+            <h1>Money
+            </h1>
+            <p>DataTel Inc. considering producing remote-focused cyberdecks for security monitoring. Stock rallies.
+            <br><br>Night City infrastructure costs on the rise due to vandalism.
+            </p>            
+            <h1>Politics
+            </h1>
+            <p>First exotic Night Citizen to be put on election ballot! 
+                <br><br>
+                Night City PD suspected of selling evidence on the street!
+            </p>         
+            <h1>Technology
+            </h1>
+            <p>Arasaka testing new Gyrojet technology, says that new and improved munitions
+                can be self guided for better combat performance.
+            </p>
+        </div><div class="sectionimage" style="margin-top:230vh"><img src="images/alertimage.jpg"></div><div id="alerts" class="contentbox">
+            <h1>Alerts
+            </h1>
+            <p>Warzone hours extended to 10AM due to excess crime.<br><br>
+                Fines increased 50% on weekends due to holiday activity.
+            </p>
+            <h1>TraumaTeam</h1>
+            <p>Traumateam active in arcologies 82B and 163E.
+                <br><br>Active Traumateam zone on Techdeck and Barrel.
+            </p>
+            <h1>Traffic</h1>
+            <p>I-101 blocked due to Nomad Activity.
+            </p>
+        </div>
     </div>
-
-</div>
-
-<!--Login page-->
-
-<div class="container" id="loginpage">
-<div id="loginbox">
-    <div id="welcome">Night City After Dark</div>
-
-<!--Input form-->
-    <form action="/action_page.php" id="inputform">
-        <input type="text" id="username" style="margin-top:14vh;"></input>
-        <input type="text" id="password"></input>
-      </form> 
-
-    </div>
-</div>
-
-<!--Sfx-->
-<audio id="keysound" src="audio/keysound1.wav"></audio>
-<audio id="keysound2" src="audio/keysound2.wav"></audio>
-
-
-<script>
-    
-    emailbannerid = document.getElementById("emailbannerid");
-    mainemailsender = document.getElementById("mainemailsender");
-    mainemailsubject = document.getElementById("mainemailsubject");
-    mainemailcontent = document.getElementById("mainemailcontent");
-    username = document.getElementById("username");
-    password = document.getElementById("password");
-    loggedInUser = "";
-    var data = {}
-
-    // Init function
-    
-    function pushEmailFunction(loggedInUser){
-    // Public IP with port, function as defined in server.js
-        axios.get("http://98.148.80.97:5001/getEmails").then((res) => { 
-            data = res.data
-             //Put newest email to front (Needs implementation).
-             var defaultemail = data.length-1;
-              // data var, index is email, followed subobject is column
-                mainemailsenderdata = `<p> Sender: ${data[defaultemail].useremail} </p>`
-                mainemailsubjectdata = `<p> Subject: ${data[defaultemail].subject} </p>`
-                mainemailcontentdata = `<p>${data[defaultemail].content} </p>`
-        //}
-        mainemailsender.innerHTML= mainemailsenderdata;
-        mainemailsubject.innerHTML= mainemailsubjectdata;
-        mainemailcontent.innerHTML= mainemailcontentdata;
-        for (let i = data.length-1; i >= 0; i--){
-            if(i == data.length-1){
-            emailbannerid.innerHTML+= `<div class="emailnotification"
-            onclick="showEmail(${data[i].emailid})"
-            style="margin-top:3vh;">
-            <bigemailheading>${data[i].useremail}</bigemailheading>
-            <br><br>
-            <smallemailheading>${data[i].subject}</smallemailheading></div>`
-            ;
-        }else{
-            emailbannerid.innerHTML+= `<div class="emailnotification" 
-            onclick="showEmail(${data[i].emailid})"
-            >
-            <bigemailheading style="">${data[i].useremail}</bigemailheading>
-            <br><br>
-            <smallemailheading>${data[i].subject}</smallemailheading></div>`
-            ;
-        }
-        }
-        })
-    }
-    function showEmail(emailid){
-       console.log(emailid); 
-       mainemailsenderdata = `<p> Sender: ${data[emailid-1].useremail} </p>`
-        mainemailsubjectdata = `<p> Subject: ${data[emailid-1].subject} </p>`
-        mainemailcontentdata = `<p>${data[emailid-1].content} </p>`
-        mainemailsender.innerHTML= mainemailsenderdata;
-        mainemailsubject.innerHTML= mainemailsubjectdata;
-        mainemailcontent.innerHTML= mainemailcontentdata;
-    }
-
-
-    document.getElementById('inputform').onkeydown = function(e){
-if(e.keyCode == 13){
-		usernamestring = username.value;
-		passwordstring = password.value;
-		parseinput(usernamestring, passwordstring);
-		keysound2.currentTime = 0;
-		keysound2.play();
-		keysound2.volume = .25;
-    }
-		else{
-		keysound.currentTime = 0;
-		keysound.volume = .25;
-		keysound.play();
-		}
-    };
-
-
-function parseinput(usernamestring, passwordstring){
-    var loginData = { username : usernamestring, password : passwordstring }
-    console.log(loginData);
-    //Resetting login form
-    username.value="";
-    password.value="";
-    axios.post("http://98.148.80.97:5001/login", loginData).then((res) => {
-          console.log(res);
-          console.log(res.data);
-          if (res.data.success == true) { 
-            loggedInUser = res.data.username;
-        loginpage.style.visibility="hidden";
-        emailpage.style.visibility="visible";
-        pushEmailFunction(loggedInUser);
-        }})
-}
-
-
-
-</script>
+    <script src="functionality.js"></script>
+    <audio id="hum" src="audio/hum.wav" loop autoloop>
+    <audio id="powerswitch" src="audio/power.mp3" >
+    <audio id="keypress" src="audio/snap2.mp3" >
+</body>
